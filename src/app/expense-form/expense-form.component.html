@@ -1,0 +1,31 @@
+<div class="container">
+    <form #expenseForm="ngForm">
+		<h1>Add An Expense</h1>
+
+		<div class="form-group">
+			<input type="date"
+			class="form-control"
+			placeholder="Date (mm/dd/yyyy)"
+			[(ngModel)]="date">
+		</div>
+		<div class="form-group">
+			<input type="text"
+			class="form-control"
+			placeholder="Category"
+			[(ngModel)]="category">
+		</div>
+		<div class="form-group">
+			<input type="text"
+			class="form-control"
+			placeholder="Price"
+			[(ngModel)]="price">
+		</div>
+		<div class="form-group">
+			<input type="text"
+			class="form-control"
+			placeholder="Location"
+			[(ngModel)]="location">
+		</div>
+		<button type="submit" class="btn btn-primary">Add</button>
+	</form>
+</div>
