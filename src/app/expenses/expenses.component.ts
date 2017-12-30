@@ -8,14 +8,15 @@ import { Expense} from '../expense';
 })
 export class ExpensesComponent implements OnInit {
 	title = 'Expenses Log';
-	expenses: Expense = {
+	expense: Expense = {
 		date: "12/12/2017",
 		category: "Gas",
 		price: "29.00",
 		location: "United Oil"
 	};
 
-	constructor() { }
+	constructor() {
+	 }
 
 	// addExpense(){	
 	// 	let price = "0.00";
