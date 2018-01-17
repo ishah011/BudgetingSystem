@@ -7,7 +7,7 @@
 		<th>Price</th>
 		<th>Location</th>
 	</tr>
-	<tr ng-repeat="expense in expense">
+	<tr *ngIf="expense" ng-repeat="expense in expense">
 		<td>{{expense.date}}</td>
 		<td>{{expense.category}}</td>
 		<td>{{expense.price}}</td>
