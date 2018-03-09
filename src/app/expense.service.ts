@@ -1,22 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Expense } from './expense';
+import { Expense } from './expense.model';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class ExpenseService {
 
-	constructor() { }
-	
-	expenses: Expense[] = [];
+	// expenses: Expense[] = [];
+	// private totalExpenses = new Subject<Expense[]>();
 
-	getExpenses(): Observable<Expense[]>{
-		return of(this.expenses);
-	}
+	// constructor() {
+	// 	this.add$ = this.totalExpenses.asObservable();
+	//  }
 
-	add( expense: Expense){
-		this.expenses.push(expense);
-	}
+
+	// getExpenses(): Observable<Expense[]>{
+	// 	return of(this.expenses);
+	// }
+
+	// add(expense: Expense){
+	// 	this.totalExpenses.next(expense);
+	// }
 }
 
 /*

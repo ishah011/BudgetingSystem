@@ -7,13 +7,18 @@
 		<th>Price</th>
 		<th>Location</th>
 	</tr>
-	<tr *ngIf="expense" ng-repeat="expense in expense">
+	<tr *ngFor="let expense of expenses">
 		<td>{{expense.date}}</td>
 		<td>{{expense.category}}</td>
 		<td>{{expense.price}}</td>
 		<td>{{expense.location}}</td>
 	</tr>
 </table>
+<p> {{value}} </p>
+<button
+	type="submit"
+	class="btn btn-primary"
+	(click)="addThisExpense()">Add</button>
 <!--might need to make separate component for this-->
 <!--Add Expenses form-->
 <!-- <form (ngSubmit)="addExpense()"
