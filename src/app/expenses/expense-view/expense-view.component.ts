@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-//import { ExpenseService} from '../expense.service';
-import { Expense} from '../expense.model';
 
 @Component({
-	selector: 'app-expenses',
-	templateUrl: './expenses.component.html',
-	styleUrls: ['./expenses.component.css']
+  selector: 'app-expense-view',
+  templateUrl: './expense-view.component.html',
+  styleUrls: ['./expense-view.component.css']
 })
-export class ExpensesComponent implements OnInit {
-	title = 'Expenses Log';
+export class ExpenseViewComponent implements OnInit {
+
+  title = 'Expenses Log';
 	value = "Boo";
 
 	expenses: Expense[] = [
