@@ -1,2 +1,16 @@
-<app-expense-view></app-expense-view>
-<app-expense-form></app-expense-form>
+<h1>Expenses</h1>
+<table>
+	<tr>
+		<th>Date</th>
+		<th>Category</th>
+		<th>Price</th>
+		<th>Location</th>
+	</tr>
+	<tr *ngFor="let expense of expenses">
+		<td>{{expense.date}}</td>
+		<td>{{expense.category}}</td>
+		<td>{{expense.price}}</td>
+		<td>{{expense.location}}</td>
+	</tr>
+</table>
+<app-expense-form (expenseAdded)="addExpense($event)"></app-expense-form>

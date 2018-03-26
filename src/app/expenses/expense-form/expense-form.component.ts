@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Expense} from '../expense.model';
 //import { ExpenseService} from '../expense.service';
 
@@ -8,7 +8,7 @@ import { Expense} from '../expense.model';
   styleUrls: ['./expense-form.component.css']
 })
 export class ExpenseFormComponent implements OnInit {
-
+  @Output() expenseAdded = new EventEmitter<Expense>();
 	// constructor(private expenseService ExpenseService) { }
 	// // addExpense(expense): void {
 	//		want to take input to form and format it into expense object
@@ -19,8 +19,9 @@ export class ExpenseFormComponent implements OnInit {
 	model: Expense[] = [];
 
 	addExpense($event): void{
-		let expense = new Expense($event.date, $event.category, $event.price, $event.location);
-		// this.expenseService.add(expense)
+		let expense = new Expense($event.srcElement.form[0].value, $event.srcElement.form[1].value, $event.srcElement.form[2].value, $event.srcElement.form[3].value);
+    this.expenseAdded.emit(expense);
+    // this.expenseService.add(expense)
 		// .subscribe(expense => expense = this.model);
 		//need to use the .subscribe of observable methods for this to work properly
 		//see getExpenses in the service and the expenses component
