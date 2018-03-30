@@ -9,6 +9,7 @@ import { Expense} from './expense.model';
 })
 export class ExpensesComponent implements OnInit {
 	@Input() addedExpense: Expense;
+	formVisible = false;
 	title = 'Expenses Log';
 
 	expenses: Expense[] = [
@@ -25,6 +26,10 @@ export class ExpensesComponent implements OnInit {
 	ngOnInit() {
 		this.getExpenses();
 
+	}
+
+	showForm(){
+		this.formVisible = true;
 	}
 
 	addExpense(expenseData: Expense){

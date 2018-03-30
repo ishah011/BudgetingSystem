@@ -23,6 +23,16 @@
   width: 700px;
 }
 
+.right-container{
+	display:flex;
+	justify-content: flex-end;
+	width: 75%;
+	margin: 0 auto;
+}
+.add-expense{
+	margin-bottom: 10px;
+}
+
 table{
 	width:75%;
 	margin:auto;
@@ -39,11 +49,4 @@ table, th, td{
 
 h2, h3{
 	text-align:left;
-}
-
-form{
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
 }
