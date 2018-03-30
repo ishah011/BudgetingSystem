@@ -1,11 +1,24 @@
 h2{
   text-align: left;
+  margin-top: 10px;
 }
 
 .container{
   text-align: center;
   width: inherit;
   margin: 0 auto 20px auto;
+}
+
+.right-container{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.close-modal{
+  font-weight: bold;
+  color:white;
+  background-color: red;
 }
 
 .col-form-label{
