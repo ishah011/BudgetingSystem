@@ -1,7 +1,26 @@
 .flexbox-container{
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-direction: column;
+	width: 75%;
+	margin: auto;
+}
+
+.row{
+	background-color: #fff;
+	padding: 10px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.expense{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.expense-form{
+	/* display: none; */
+  margin: 0 auto 20px auto;
+  width: 700px;
 }
 
 table{

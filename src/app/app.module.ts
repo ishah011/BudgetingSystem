@@ -11,6 +11,7 @@ import { BudgetsComponent } from './budgets/budgets.component';
 import { BudgetViewComponent } from './budgets/budget-view/budget-view.component';
 import { BudgetAddComponent } from './budgets/budget-add/budget-add.component';
 import { IncomeAddComponent } from './budgets/income-add/income-add.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { IncomeAddComponent } from './budgets/income-add/income-add.component';
     BudgetsComponent,
     BudgetViewComponent,
     BudgetAddComponent,
-    IncomeAddComponent
+    IncomeAddComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
