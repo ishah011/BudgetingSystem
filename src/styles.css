@@ -2,3 +2,23 @@
 body{
   background-color: #efefef;
 }
+
+.title{
+  margin: 0px;
+  padding: 0px;
+}
+
+.heading{
+  background-color: #5D737E;
+  color:#fff;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.btn{
+  background-color: #64B6AC;
+  border-style: none;
+}
+  .btn:hover, .btn:focus, .btn:active, .btn:active:hover, .btn:active:focus{
+    background-color: #56a097;
+  }

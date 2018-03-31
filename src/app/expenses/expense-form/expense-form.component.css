@@ -4,6 +4,8 @@ h2{
 }
 
 .container{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   width: inherit;
   margin: 0 auto 20px auto;
@@ -17,9 +19,14 @@ h2{
 
 .close-modal{
   font-weight: bold;
-  color:white;
-  background-color: red;
+  font-size: 14px;
+  background-color: inherit;
+  color:#e0e0e0;
 }
+
+  .close-modal:hover, .close-modal:focus, .close-modal:active, .close-modal:active:hover, .close-modal:active:focus{
+      color: #fff;
+  }
 
 .col-form-label{
   text-align: right;

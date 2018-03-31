@@ -6,15 +6,9 @@
 }
 
 .row{
-	background-color: #fff;
-	padding: 10px;
+	background-color: #FCFFFD;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
-}
-
-.expense{
-	padding-right: 15px;
-	padding-left: 15px;
 }
 
 .expense-form{
@@ -40,7 +34,7 @@ table{
 
 th{
 	font-weight: bold;
-	background-color: #a5e1ff;
+	background-color: #C0FDFB;
 }
 
 table, th, td{

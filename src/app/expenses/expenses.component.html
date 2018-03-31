@@ -3,8 +3,9 @@
   (expenseAdded)="addExpense($event)"
   *ngIf="formVisible" class="row expense-form"></app-expense-form>
   <div class="row expense">
-    <h2>Expenses</h2>
-    <hr>
+    <div class="heading">
+      <h2 class="title">Expenses</h2>
+    </div>
     <div class="right-container">
       <button type="button" name="add-expense"
       id="add-expense" class="btn btn-primary add-expense"
