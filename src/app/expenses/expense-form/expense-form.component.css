@@ -25,7 +25,8 @@ h2{
 }
 
   .close-modal:hover, .close-modal:focus, .close-modal:active, .close-modal:active:hover, .close-modal:active:focus{
-      color: #fff;
+      color: #c0c0c0c0;
+      background-color: inherit;
   }
 
 .col-form-label{

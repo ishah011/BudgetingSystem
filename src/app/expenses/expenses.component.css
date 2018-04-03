@@ -3,12 +3,14 @@
 	flex-direction: column;
 	width: 75%;
 	margin: auto;
+	padding-top: 75px;
 }
 
 .row{
-	background-color: #FCFFFD;
+	background-color: #FFFFFF;
 	padding-bottom: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
 .expense-form{
