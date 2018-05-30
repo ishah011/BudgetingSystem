@@ -1,3 +1,63 @@
-<p>
-  budget-add works!
-</p>
+<div class="container">
+  <div class="right-container">
+
+  </div>
+  <div class="heading row">
+    <h2 class="title col-sm-10">Add Budget Item</h2>
+    <div class="col-sm-1">
+    </div>
+    <button type="button" name="close" class="btn btn-fail close-modal col-sm-1">X</button>
+  </div>
+    <form #expenseForm="ngForm">
+		<div class="form-group row">
+      <label for="name" class="col-sm-3 col-form-label">Name:</label>
+      <div class="col-sm-7">
+        <input type="text"
+        class="form-control"
+        id="name"
+        placeholder="Name"
+        name="name">
+      </div>
+		</div>
+		<div class="form-group row">
+      <label for="amount" class="col-sm-3 col-form-label">Amount:</label>
+      <div class="col-sm-7">
+        <input type="text"
+  			class="form-control"
+        id="amount"
+  			placeholder="Amount"
+  			name="amount">
+      </div>
+		</div>
+    <!--TODO: Fix styling of the dropdowns and their labels-->
+		<div class="form-group row">
+      <label for="reoccurring" class="col-sm-3 col-form-label">Reoccurring:</label>
+      <select class="col-sm-2 dropdown" name="reoccurring" id="reoccurring">
+        <option
+        class="form-control radio"
+        value="no">No</option>
+        <option
+        class="form-control radio"
+        value="yes">Yes</option>
+      </select>
+      <!--Frequency should only show up if Reoccurring is set to "Yes"-->
+      <label for="frequency" class="col-sm-3 col-form-label">Frequency:</label>
+      <select class="col-sm-2 dropdown" name="frequency" id="frequency">
+        <option
+        class="form-control radio"
+        value="monthly">Monthly</option>
+        <option
+        class="form-control radio"
+        value="biweekly">Bi-Weekly</option>
+        <option
+        class="form-control radio"
+        value="weekly">Weekly</option>
+        <option
+        class="form-control radio"
+        value="daily">Daily</option>
+      </select>
+		</div>
+    <!-- TODO: Get the TS code adding budget -->
+		<button (click)="addExpense($event)" type="submit" class="btn btn-primary btn-success">Add</button>
+	</form>
+</div>
