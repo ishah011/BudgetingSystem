@@ -9,7 +9,7 @@ import { Expense} from './expense.model';
 })
 export class ExpensesComponent implements OnInit {
 	@Input() addedExpense: Expense;
-	formVisible = false;
+	formVisible: boolean = false;
 	title = 'Expenses Log';
 
 	expenses: Expense[] = [
@@ -30,6 +30,10 @@ export class ExpensesComponent implements OnInit {
 
 	showForm(){
 		this.formVisible = true;
+	}
+
+	modifyVisibility(): void{
+		this.formVisible = false;
 	}
 
 	addExpense(expenseData: Expense){

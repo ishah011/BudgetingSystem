@@ -9,14 +9,14 @@ import { Expense} from '../expense.model';
 })
 export class ExpenseFormComponent implements OnInit {
   @Output() expenseAdded = new EventEmitter<Expense>();
+  @Output() visibleForm = new EventEmitter<boolean>();
+  formVisible: boolean = true;
 	// constructor(private expenseService ExpenseService) { }
 	// // addExpense(expense): void {
 	//		want to take input to form and format it into expense object
 	// // 	this.expenseService.add(expense)
 	// // }
 	constructor(){} //private expenseService: ExpenseService
-
-	model: Expense[] = [];
 
 	addExpense($event): void{
 		let expense = new Expense($event.srcElement.form[0].value, $event.srcElement.form[1].value, $event.srcElement.form[2].value, $event.srcElement.form[3].value);
@@ -27,6 +27,10 @@ export class ExpenseFormComponent implements OnInit {
 		//see getExpenses in the service and the expenses component
 	}
 
+  closeForm(): void{
+    this.formVisible = false;
+    this.visibleForm.emit(this.formVisible);
+  }
 
 	ngOnInit() {
 	}

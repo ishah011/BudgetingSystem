@@ -1,35 +1,37 @@
-<div class="flexbox-container">
+<div class="container-fluid expenses-container">
   <app-expense-form
   (expenseAdded)="addExpense($event)"
+  (visibleForm)="modifyVisibility()"
   *ngIf="formVisible" class="row expense-form"></app-expense-form>
   <div class="row expense">
-    <div class="heading">
+    <div class="col-10 heading">
       <h2 class="title">Expenses</h2>
-      <hr>
     </div>
-    <div class="right-container">
+    <div class="col-2">
       <button type="button" name="add-expense"
       id="add-expense" class="btn btn-primary add-expense"
       (click)="showForm()">Add Expense</button>
     </div>
-    <table class="table table-hover table-striped">
-      <thead>
-        <tr>
-      		<th scope="col">Date</th>
-      		<th scope="col">Category</th>
-      		<th scope="col">Price</th>
-      		<th scope="col">Location</th>
-      	</tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let expense of expenses">
-      		<td scope="row">{{expense.date}}</td>
-      		<td>{{expense.category}}</td>
-      		<td>{{expense.price}}</td>
-      		<td>{{expense.location}}</td>
-      	</tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+        		<th scope="col">Date</th>
+        		<th scope="col">Category</th>
+        		<th scope="col">Price</th>
+        		<th scope="col">Location</th>
+        	</tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let expense of expenses">
+        		<td scope="row">{{expense.date}}</td>
+        		<td>{{expense.category}}</td>
+        		<td>{{expense.price}}</td>
+        		<td>{{expense.location}}</td>
+        	</tr>
+        </tbody>
+      </table>
+    </div>
 
   </div>
 </div>
