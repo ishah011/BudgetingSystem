@@ -1,10 +1,10 @@
-.flexbox-container{
+/* .flexbox-container{
 	display: flex;
 	flex-direction: column;
 	width: 75%;
 	margin: auto;
 	padding-top: 75px;
-}
+} */
 
 .row{
 	background-color: #FFFFFF;
@@ -19,12 +19,15 @@
   width: 700px;
 }
 
-.right-container{
+.expenses-container{
+		width:75%;
+}
+/* .right-container{
 	display:flex;
 	justify-content: flex-end;
 	width: 75%;
 	margin: 0 auto;
-}
+} */
 .add-expense{
 	margin-bottom: 10px;
 }
