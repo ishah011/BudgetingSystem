@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Budget } from '../../models/budget.model';
 import { BudgetService } from '../../services/budget.service'
+import { Subscription }   from 'rxjs';
 
 @Component({
   selector: 'app-budget-view',
@@ -9,10 +10,21 @@ import { BudgetService } from '../../services/budget.service'
   providers: [BudgetService]
 })
 export class BudgetViewComponent implements OnInit {
-  constructor(private _budgetService: BudgetService) { }
+  budgets: Budget[];
+  _subscription: Subscription;
+  constructor(private _budgetService: BudgetService) {
+    this.budgets = _budgetService.budgets;
+    this._subscription = _budgetService.budgetChange.subscribe((value) => {
+      this.budgets = value;
+    });
+  }
 
   ngOnInit() {
 
+  }
+
+  ngOnDestroy(){
+    this._subscription.unsubscribe();
   }
 
 }

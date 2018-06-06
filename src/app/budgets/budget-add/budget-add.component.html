@@ -1,6 +1,5 @@
 <div class="container">
   <div class="right-container">
-
   </div>
   <div class="heading row">
     <h2 class="title col-sm-10">Add Budget Item</h2>
@@ -40,7 +39,7 @@
         class="form-control radio"
         value="yes">Yes</option>
       </select>
-      <!--Frequency should only show up if Reoccurring is set to "Yes"-->
+      <!-- TODO: Frequency should only show up if Reoccurring is set to "Yes"-->
       <label for="frequency" class="col-sm-3 col-form-label">Frequency:</label>
       <select class="col-sm-2 dropdown" name="frequency" id="frequency">
         <option
@@ -60,4 +59,7 @@
     <!-- TODO: Get the TS code adding budget -->
 		<button (click)="addBudget($event)" type="submit" class="btn btn-primary btn-success">Add</button>
 	</form>
+  <p *ngFor="let budget of _budgetService.budgets">
+    {{budget.name}}
+  </p>
 </div>
