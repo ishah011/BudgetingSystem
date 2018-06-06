@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ExpenseService } from './expense.service';
+import { BudgetService } from './services/budget.service';
+import { NavbarService } from './services/navbar.service';
 
 
 import { AppComponent } from './app.component';
@@ -29,7 +31,10 @@ import { HeaderComponent } from './header/header.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [ExpenseService],
+  providers: [ExpenseService,
+  BudgetService,
+  NavbarService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
