@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Budget } from '../models/budget.model';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class BudgetService {
@@ -8,13 +8,15 @@ export class BudgetService {
     new Budget("Rent", "1000.00", "No", "")
   ];
   newBudget: Budget;
-  budgetChange: Subject<Budget[]> = new Subject<Budget[]>();
+  budgetChange = new BehaviorSubject<Budget[]>(this.budgets);
+  currentBudget = this.budgetChange.asObservable();
   constructor() { }
 
   addBudget(inputBudget:Budget): void{
     this.setBudget(inputBudget);
     this.budgets.push(this.newBudget);
     this.budgetChange.next(this.budgets);
+    console.log(this.budgets);
   }
 
   setBudget(inputBudget:Budget): void{
