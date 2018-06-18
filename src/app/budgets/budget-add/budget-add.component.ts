@@ -6,7 +6,6 @@ import { Budget } from '../../models/budget.model';
   selector: 'app-budget-add',
   templateUrl: './budget-add.component.html',
   styleUrls: ['./budget-add.component.css'],
-  providers: [BudgetService]
 })
 export class BudgetAddComponent implements OnInit {
 

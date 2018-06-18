@@ -1,7 +1,4 @@
 <div class="container-fluid expenses-container">
-  <p *ngFor="let budget of _budgetService.budgets">
-      {{budget.name}}
-  </p>
   <div class="row expense">
     <div class="col-10 heading">
       <h2 class="title">Budgets</h2>
@@ -12,7 +9,6 @@
       (click)="showForm()">Add Expense</button>
     </div> -->
     <div class="table-responsive">
-      <button (click)="getBudgets()">Get Budget</button>
       <table class="table table-hover table-striped">
         <thead>
           <tr>
