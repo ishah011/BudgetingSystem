@@ -1,3 +1,5 @@
+// TODO: get this functionality working for the navbar -- draw from the example of the BudgetService
+
 import { Injectable } from '@angular/core';
 
 @Injectable()

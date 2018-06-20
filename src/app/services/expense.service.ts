@@ -3,7 +3,7 @@ import { Expense } from './models/expense.model';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { Subject } from 'rxjs/Subject';
-
+// TODO: make expense work with the service instead of the way it's working right now
 @Injectable()
 export class ExpenseService {
 
