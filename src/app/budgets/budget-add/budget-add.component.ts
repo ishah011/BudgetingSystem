@@ -8,7 +8,7 @@ import { Budget } from '../../models/budget.model';
   styleUrls: ['./budget-add.component.css'],
 })
 export class BudgetAddComponent implements OnInit {
-
+  isReccurring: boolean = false;
   constructor(private _budgetService: BudgetService) { }
 
   ngOnInit() {
@@ -18,5 +18,14 @@ export class BudgetAddComponent implements OnInit {
 		let budget = new Budget($event.srcElement.form[0].value, $event.srcElement.form[1].value, $event.srcElement.form[2].value, $event.srcElement.form[3].value);
     this._budgetService.addBudget(budget);
 	}
+
+  onReccurringChange(event){
+    if(event.target.value === "Yes"){
+      this.isReccurring = true;
+    }
+    else{
+      this.isReccurring = false;
+    }
+  }
 
 }

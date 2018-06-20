@@ -30,30 +30,30 @@
 		</div>
     <!--TODO: Fix styling of the dropdowns and their labels-->
 		<div class="form-group row">
-      <label for="reoccurring" class="col-sm-3 col-form-label">Reoccurring:</label>
-      <select class="col-sm-2 dropdown" name="reoccurring" id="reoccurring">
+      <label for="reccurring" class="col-sm-3 col-form-label">Reccurring:</label>
+      <select class="col-sm-2 dropdown" name="reccurring" id="reccurring" (change)="onReccurringChange($event)">
         <option
         class="form-control radio"
-        value="no">No</option>
+        value="No">No</option>
         <option
         class="form-control radio"
-        value="yes">Yes</option>
+        value="Yes">Yes</option>
       </select>
-      <!-- TODO: Frequency should only show up if Reoccurring is set to "Yes"-->
-      <label for="frequency" class="col-sm-3 col-form-label">Frequency:</label>
-      <select class="col-sm-2 dropdown" name="frequency" id="frequency">
+      <!-- TODO: Frequency should only show up if Reoccurring is set to "Yes", may need two-way binding for this-->
+      <label for="frequency" *ngIf="isReccurring" class="col-sm-3 col-form-label">Frequency:</label>
+      <select *ngIf="isReccurring" class="col-sm-2 dropdown" name="frequency" id="frequency">
         <option
         class="form-control radio"
-        value="monthly">Monthly</option>
+        value="Monthly">Monthly</option>
         <option
         class="form-control radio"
-        value="biweekly">Bi-Weekly</option>
+        value="Bi-weekly">Bi-Weekly</option>
         <option
         class="form-control radio"
-        value="weekly">Weekly</option>
+        value="Weekly">Weekly</option>
         <option
         class="form-control radio"
-        value="daily">Daily</option>
+        value="Daily">Daily</option>
       </select>
 		</div>
     <!-- TODO: Get the TS code adding budget -->
