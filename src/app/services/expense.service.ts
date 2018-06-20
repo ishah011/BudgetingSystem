@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Expense } from './models/expense.model';
+import { Expense } from '../models/expense.model';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { Subject } from 'rxjs/Subject';

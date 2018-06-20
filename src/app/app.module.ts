@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ExpenseService } from './expense.service';
+import { ExpenseService } from './services/expense.service';
 import { BudgetService } from './services/budget.service';
 import { NavbarService } from './services/navbar.service';
 
