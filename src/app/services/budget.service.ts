@@ -5,7 +5,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable()
 export class BudgetService {
   budgets: Budget[] = [
-    new Budget("Rent", "1000.00", "No", "")
   ];
   newBudget: Budget;
   budgetChange = new BehaviorSubject<Budget[]>(this.budgets);
