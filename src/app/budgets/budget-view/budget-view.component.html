@@ -19,8 +19,9 @@
         	</tr>
         </thead>
         <tbody *ngIf="budgets">
+          <!-- TODO: Add a directive to make the row red if the type is expense and green if the type is income -->
           <tr *ngFor="let budget of budgets">
-        		<td scope="row">{{budget.name}}</td>
+            <td scope="row">{{budget.name}}</td>
         		<td>{{budget.amount}}</td>
         		<td>{{budget.recurring}}</td>
         		<td>{{budget.frequency}}</td>
