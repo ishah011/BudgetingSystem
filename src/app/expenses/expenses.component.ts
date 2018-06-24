@@ -1,31 +1,33 @@
 import { Component, OnInit, Input } from '@angular/core';
-//import { ExpenseService} from '../expense.service';
+import { Subscription }   from 'rxjs';
+import { ExpenseService} from '../services/expense.service';
 import { Expense} from '../models/expense.model';
 
 @Component({
 	selector: 'app-expenses',
 	templateUrl: './expenses.component.html',
-	styleUrls: ['./expenses.component.css']
+	styleUrls: ['./expenses.component.css'],
+	providers: [ExpenseService]
 })
 export class ExpensesComponent implements OnInit {
 	@Input() addedExpense: Expense;
 	formVisible: boolean = false;
 	title = 'Expenses Log';
 
-	expenses: Expense[] = [
-		new Expense("12/12/2017", "Gas", "29.00", "United Oil")
-	];
+	expenses: Expense[] = [];
+	_subscription: Subscription;
 
-	constructor() {}//private expenseService: ExpenseService)
-
-	getExpenses(): void{
-		// this.expenseService.getExpenses()
-		// .subscribe(expenses => this.expenses = expenses);
+	constructor(private _expenseService: ExpenseService) {
+		this._subscription = this._expenseService.currentExpense.subscribe((value) => {
+      this.expenses = value;
+    });
 	}
 
 	ngOnInit() {
-		this.getExpenses();
+	}
 
+	ngOnDestroy(){
+		this._subscription.unsubscribe();
 	}
 
 	showForm(){
@@ -34,14 +36,5 @@ export class ExpensesComponent implements OnInit {
 
 	modifyVisibility(): void{
 		this.formVisible = false;
-	}
-
-	addExpense(expenseData: Expense){
-		this.expenses.push(expenseData);
-		//this.value = event.value;
-		// this.expenseService.add(expense)
-		// .subscribe(expense => expense = this.model);
-		//need to use the .subscribe of observable methods for this to work properly
-		//see getExpenses in the service and the expenses component
 	}
 }
