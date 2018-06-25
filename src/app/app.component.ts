@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavbarService } from './services/navbar.service'
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NavbarService } from './services/navbar.service';
+import { Subscription }   from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,17 @@ import { NavbarService } from './services/navbar.service'
 export class AppComponent {
   title = 'Budgeting System';
   selectedValue:string;
+  _subscription: Subscription;
 
-  constructor(private _navbarService: NavbarService){}
+  constructor(private _navbarService: NavbarService){
+    this._subscription = this._navbarService.currentNavigation.subscribe((value) => {
+      this.selectedValue = value;
+    });
+  }
 
-  ngOnInit(){
-    this.selectedValue = this._navbarService.getNavigation();
+  ngOnInit(){}
+
+  ngOnDestroy(){
+    this._subscription.unsubscribe();
   }
 }

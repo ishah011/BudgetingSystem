@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Expense } from '../models/expense.model';
 import { BehaviorSubject, Observable } from 'rxjs';
-// TODO: make expense work with the service instead of the way it's working right now
+
 @Injectable()
 export class ExpenseService {
 
