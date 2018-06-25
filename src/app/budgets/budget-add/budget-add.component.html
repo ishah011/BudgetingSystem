@@ -7,7 +7,7 @@
     </div>
     <button type="button" name="close" class="btn btn-fail close-modal col-sm-1">X</button>
   </div>
-    <form #expenseForm="ngForm">
+    <form #budgetForm="ngForm">
 		<div class="form-group row">
       <label for="name" class="col-sm-3 col-form-label">Name:</label>
       <div class="col-sm-7">
@@ -39,7 +39,6 @@
         class="form-control radio"
         value="Yes">Yes</option>
       </select>
-      <!-- TODO: Frequency should only show up if Reoccurring is set to "Yes", may need two-way binding for this-->
       <label for="frequency" *ngIf="isReccurring" class="col-sm-3 col-form-label">Frequency:</label>
       <select *ngIf="isReccurring" class="col-sm-2 dropdown" name="frequency" id="frequency">
         <option
@@ -56,7 +55,6 @@
         value="Daily">Daily</option>
       </select>
 		</div>
-    <!-- TODO: Get the TS code adding budget -->
 		<button (click)="addBudget($event)" type="submit" class="btn btn-primary btn-success">Add</button>
 	</form>
 </div>
