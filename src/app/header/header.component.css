@@ -3,3 +3,10 @@
   border-color: #494949;
   color: #cecece;
 }
+ .logo{
+   max-width: 50px;
+   max-height: auto;
+ }
+ .nav-link{
+   font-family: 'Merriweather Sans', sans-serif;
+ }
