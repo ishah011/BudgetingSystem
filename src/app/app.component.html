@@ -1,6 +1,7 @@
 <div style="text-align:center">
   <app-header></app-header>
-  <app-login class="component" *ngIf="selectedValue === 'Login'"></app-login>
-  <app-expenses class="component" *ngIf="selectedValue === 'Expenses'"></app-expenses>
-  <app-budgets class="component" *ngIf="selectedValue === 'Budgets'"></app-budgets>
+  <!-- <app-login class="component" *ngIf="selectedValue === 'Login'"></app-login> -->
+  <!-- <app-expenses class="component" *ngIf="selectedValue === 'Expenses'"></app-expenses> -->
+  <router-outlet></router-outlet>
+  <!-- <app-budgets class="component" *ngIf="selectedValue === 'Budgets'"></app-budgets> -->
 </div>
