@@ -15,6 +15,8 @@ import { BudgetAddComponent } from './budgets/budget-add/budget-add.component';
 import { IncomeAddComponent } from './budgets/income-add/income-add.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -27,11 +29,13 @@ import { LoginComponent } from './login/login.component';
     BudgetAddComponent,
     IncomeAddComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ExpenseService,
   BudgetService,
