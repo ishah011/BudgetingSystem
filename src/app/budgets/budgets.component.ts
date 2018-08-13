@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BudgetService } from '../services/budget.service';
+import { Subscription }   from 'rxjs';
 
 @Component({
   selector: 'app-budgets',
@@ -7,11 +8,22 @@ import { BudgetService } from '../services/budget.service';
   styleUrls: ['./budgets.component.css'],
   providers: [BudgetService]
 })
-export class BudgetsComponent implements OnInit {
+export class BudgetsComponent implements OnInit, OnDestroy {
 
-  constructor(private _budgetService: BudgetService) { }
+  _subscription: Subscription;
+  addBudgetVisible: boolean = false;
+
+  constructor(private _budgetService: BudgetService) { 
+    this._subscription = this._budgetService.currentAddVisibility.subscribe((value) => {
+      this.addBudgetVisible = value;
+    });
+  }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(){
+    this._subscription.unsubscribe();
   }
 
 }

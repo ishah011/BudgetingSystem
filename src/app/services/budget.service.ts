@@ -13,7 +13,7 @@ export class BudgetService {
   //Initialize the visibility of the add budget ability
   addBudgetVisible: boolean = false;
   budgetVisible = new BehaviorSubject<boolean>(this.addBudgetVisible);
-  currentVisibility = this.budgetVisible.asObservable(); 
+  currentAddVisibility = this.budgetVisible.asObservable(); 
 
   constructor() { }
 
