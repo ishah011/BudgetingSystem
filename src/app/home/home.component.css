@@ -1,8 +1,15 @@
 .title{
     text-align: center;
+    font-family: 'Merriweather Sans';
 }
 
 .slogan{
+    font-family: 'Merriweather Sans Italic';
     font-style: italic;
     text-align: center;
+}
+
+.container{
+    max-width: 100%;
+    padding:3em;
 }
