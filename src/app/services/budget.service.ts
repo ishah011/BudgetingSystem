@@ -4,11 +4,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class BudgetService {
-  budgets: Budget[] = [
-  ];
+  //Initialize the budget information
+  budgets: Budget[] = [];
   newBudget: Budget;
   budgetChange = new BehaviorSubject<Budget[]>(this.budgets);
   currentBudget = this.budgetChange.asObservable();
+
+  //Initialize the visibility of the add budget ability
+  addBudgetVisible: boolean = false;
+  budgetVisible = new BehaviorSubject<boolean>(this.addBudgetVisible);
+  currentVisibility = this.budgetVisible.asObservable(); 
+
   constructor() { }
 
   addBudget(inputBudget:Budget): void{
@@ -28,5 +34,15 @@ export class BudgetService {
 
   getBudgets(): Budget[]{
     return this.budgets;
+  }
+
+  addBudgetOpen(): void{
+    this.addBudgetVisible = true;
+    this.budgetVisible.next(this.addBudgetVisible);
+  }
+
+  addBudgetClose(): void{
+    this.addBudgetVisible = false;
+    this.budgetVisible.next(this.addBudgetVisible);
   }
 }

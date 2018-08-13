@@ -1,4 +1,73 @@
-<div class="container">
+<!--TODO: Modal should show up on click of Add a Budget button on budget page-->
+<div class="modal" id="budget-add-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="budgetAddLabel">Add A Budget</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #budgetForm="ngForm">
+        <div class="modal-body">
+          <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label">Name:</label>
+            <div class="col-sm-7">
+              <input type="text"
+              class="form-control"
+              id="name"
+              placeholder="Name"
+              name="name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="amount" class="col-sm-3 col-form-label">Amount:</label>
+            <div class="col-sm-7">
+              <input type="text"
+              class="form-control"
+              id="amount"
+              placeholder="Amount"
+              name="amount">
+            </div>
+          </div>
+          <!--TODO: Fix styling of the dropdowns and their labels-->
+          <div class="form-group row">
+            <label for="reccurring" class="col-sm-3 col-form-label">Reccurring:</label>
+            <select class="col-sm-2 dropdown" name="reccurring" id="reccurring" (change)="onReccurringChange($event)">
+              <option
+              class="form-control radio"
+              value="No">No</option>
+              <option
+              class="form-control radio"
+              value="Yes">Yes</option>
+            </select>
+            <label for="frequency" *ngIf="isReccurring" class="col-sm-3 col-form-label">Frequency:</label>
+            <select *ngIf="isReccurring" class="col-sm-2 dropdown" name="frequency" id="frequency">
+              <option
+              class="form-control radio"
+              value="Monthly">Monthly</option>
+              <option
+              class="form-control radio"
+              value="Bi-weekly">Bi-Weekly</option>
+              <option
+              class="form-control radio"
+              value="Weekly">Weekly</option>
+              <option
+              class="form-control radio"
+              value="Daily">Daily</option>
+            </select>
+          </div>
+                <!-- <button  type="submit" class="btn btn-primary btn-success">Add</button> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addBudget($event)">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
   <div class="right-container">
   </div>
   <div class="heading row">
@@ -28,7 +97,6 @@
   			name="amount">
       </div>
 		</div>
-    <!--TODO: Fix styling of the dropdowns and their labels-->
 		<div class="form-group row">
       <label for="reccurring" class="col-sm-3 col-form-label">Reccurring:</label>
       <select class="col-sm-2 dropdown" name="reccurring" id="reccurring" (change)="onReccurringChange($event)">
@@ -57,4 +125,4 @@
 		</div>
 		<button (click)="addBudget($event)" type="submit" class="btn btn-primary btn-success">Add</button>
 	</form>
-</div>
+</div> -->

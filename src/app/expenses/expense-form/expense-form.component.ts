@@ -15,6 +15,9 @@ export class ExpenseFormComponent implements OnInit {
 	addExpense($event): void{
 		let expense = new Expense($event.srcElement.form[0].value, $event.srcElement.form[1].value, $event.srcElement.form[2].value, $event.srcElement.form[3].value);
     this._expenseService.addExpense(expense);
+    for(let i = 0; i < 4; i++){
+      $event.srcElement.form[i].value = "";
+    }
 	}
 
   closeForm(): void{

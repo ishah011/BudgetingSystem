@@ -1,4 +1,69 @@
-<div class="container">
+<!--MODAL DIALOG POPUP FROM BOOTSTRAP-->
+<!--TODO: Why does the modal stop showing up as soon as the classes modal or fade are used??-->
+<div class="modal" id="expense-form-modal" tabindex="-1" role="dialog"> <!--class="modal fade" tabindex="-1"-->
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="expenseFormLabel">Add An Expense</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span (click)="closeForm()"> &times;</span>
+          </button>
+        </div>
+        <form #expenseForm="ngForm">
+          <div class="modal-body">
+            <div class="form-group row">
+              <label for="date" class="col-sm-3 col-form-label">Date:</label>
+              <div class="col-sm-7">
+                <input type="text"
+                class="form-control"
+                id="date"
+                placeholder="Date (mm/dd/yyyy)"
+                name="date">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="category" class="col-sm-3 col-form-label">Category:</label>
+              <div class="col-sm-7">
+                <input type="text"
+                class="form-control"
+                id="category"
+                placeholder="Category"
+                name="category">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="price" class="col-sm-3 col-form-label">Price:</label>
+              <div class="col-sm-7">
+                <input type="text"
+                class="form-control"
+                id="price"
+                placeholder="Price"
+                name="price">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="location" class="col-sm-3 col-form-label">Location:</label>
+              <div class="col-sm-7">
+                <input type="text"
+                class="form-control"
+                id="location"
+                placeholder="Location"
+                name="location">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeForm()">Close</button>
+            <button type="button" class="btn btn-primary" (click)="addExpense($event)">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--END MODAL FROM BOOTSTRAP-->
+
+<!-- <div class="container">
   <div class="right-container">
 
   </div>
@@ -51,4 +116,4 @@
 		</div>
 		<button (click)="addExpense($event)" type="submit" class="btn btn-primary btn-success">Add</button>
 	</form>
-</div>
+</div> -->
