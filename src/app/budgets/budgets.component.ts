@@ -10,20 +10,26 @@ import { Subscription }   from 'rxjs';
 })
 export class BudgetsComponent implements OnInit, OnDestroy {
 
-  _subscription: Subscription;
+  _addBudgetSubscription: Subscription;
+  _addIncomeSubscription: Subscription;
   addBudgetVisible: boolean = false;
+  addIncomeVisible: boolean = false;
 
   constructor(private _budgetService: BudgetService) { 
-    this._subscription = this._budgetService.currentAddVisibility.subscribe((value) => {
+    this._addBudgetSubscription = this._budgetService.currentAddVisibility.subscribe((value) => {
       this.addBudgetVisible = value;
     });
+    this._addIncomeSubscription = this._budgetService.currentIncomeVisibility.subscribe((value) => {
+      this.addIncomeVisible = value;
+    })
   }
 
   ngOnInit() {
   }
 
   ngOnDestroy(){
-    this._subscription.unsubscribe();
+    this._addBudgetSubscription.unsubscribe();
+    this._addIncomeSubscription.unsubscribe();
   }
 
 }

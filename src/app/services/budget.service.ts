@@ -13,10 +13,16 @@ export class BudgetService {
   //Initialize the visibility of the add budget ability
   addBudgetVisible: boolean = false;
   budgetVisible = new BehaviorSubject<boolean>(this.addBudgetVisible);
-  currentAddVisibility = this.budgetVisible.asObservable(); 
+  currentAddVisibility = this.budgetVisible.asObservable();
+  
+  //Initialize the visibility of the add income ability
+  addIncomeVisible: boolean = false;
+  incomeVisible = new BehaviorSubject<boolean>(this.addIncomeVisible);
+  currentIncomeVisibility = this.incomeVisible.asObservable();
 
   constructor() { }
 
+  //Methods for adding and retrieving budgets
   addBudget(inputBudget:Budget): void{
     this.setBudget(inputBudget);
     this.budgets.push(this.newBudget);
@@ -36,6 +42,7 @@ export class BudgetService {
     return this.budgets;
   }
 
+  //Methods for viewing the add budget form
   addBudgetOpen(): void{
     this.addBudgetVisible = true;
     this.budgetVisible.next(this.addBudgetVisible);
@@ -44,5 +51,16 @@ export class BudgetService {
   addBudgetClose(): void{
     this.addBudgetVisible = false;
     this.budgetVisible.next(this.addBudgetVisible);
+  }
+
+  //Methods for viewing the add income form
+  addIncomeOpen(): void{
+    this.addIncomeVisible = true;
+    this.incomeVisible.next(this.addIncomeVisible);
+  }
+
+  addIncomeClose(): void{
+    this.addIncomeVisible = false;
+    this.incomeVisible.next(this.addIncomeVisible);
   }
 }

@@ -29,6 +29,10 @@ export class BudgetViewComponent implements OnInit, OnDestroy {
     this._budgetService.addBudgetOpen();
   }
 
+  openAddIncome(): void{
+    this._budgetService.addIncomeOpen();
+  }
+
   ngOnDestroy(){
     this._subscription.unsubscribe();
   }

@@ -27,4 +27,8 @@ export class IncomeAddComponent implements OnInit {
       this.isReccurring = false;
     }
   }
+
+  closeAddIncome(): void{
+    this._budgetService.addIncomeClose();
+  }
 }
