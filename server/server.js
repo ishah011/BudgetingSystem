@@ -1,6 +1,18 @@
 const express = require('express');
+const path = require('path');
 const app = express();
+const bodyParser = require('body-parser');
 
-app.get('/', (res) => res.send('Hello World!'));
+//Using middleware
+app.use(express.static(path.join(__dirname, '../dist')));
+app.use(bodyParser.json());
 
-app.listen(8080, () => console.log('Example app listening on port 8080!'));
+// Catch all other routes requests and return it to the index
+app.get('*', (req,res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
+
+var port = process.env.PORT || 4600;
+app.listen(port, (req, res) => console.log(`Example app listening on port ${port}!`));
+
+module.exports = app;

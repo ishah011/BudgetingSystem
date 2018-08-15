@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../services/api.service';
+// import { ApiService } from '../services/api.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -9,13 +9,14 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _api: ApiService) { }
+  constructor() { }
+  // private _api: ApiService
 
-  getApiHome(): Observable<string>{
-    return this._api.getHome();
-  }
+  // getApiHome(): Observable<string>{
+  //   return this._api.getHome();
+  // }
 
-  
+
 
   ngOnInit() {
   }
