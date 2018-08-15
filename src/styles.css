@@ -24,3 +24,7 @@ body{
     background-color: #56a097;
     color:#ffffff;
   }
+
+.modal{
+  display: initial;
+}

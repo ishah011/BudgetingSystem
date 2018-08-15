@@ -28,4 +28,8 @@ export class BudgetAddComponent implements OnInit {
     }
   }
 
+  closeAddBudget():void{
+    this._budgetService.addBudgetClose();
+  }
+
 }

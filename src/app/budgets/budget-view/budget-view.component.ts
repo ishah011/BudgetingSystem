@@ -9,7 +9,7 @@ import { Subscription }   from 'rxjs';
   styleUrls: ['./budget-view.component.css'],
 })
 
-export class BudgetViewComponent implements OnInit {
+export class BudgetViewComponent implements OnInit, OnDestroy {
 
   budgets: Budget[];
   serviceBudgets: Budget[];
@@ -23,6 +23,14 @@ export class BudgetViewComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  openAddBudget(): void{
+    this._budgetService.addBudgetOpen();
+  }
+
+  openAddIncome(): void{
+    this._budgetService.addIncomeOpen();
   }
 
   ngOnDestroy(){

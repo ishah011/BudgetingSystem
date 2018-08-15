@@ -1,13 +1,18 @@
 <div class="container-fluid expenses-container">
   <div class="row expense">
-    <div class="col-10 heading">
+    <div class="col-12 heading">
       <h2 class="title">Budgets</h2>
     </div>
-    <!-- <div class="col-2">
-      <button type="button" name="add-expense"
-      id="add-expense" class="btn btn-primary add-expense"
-      (click)="showForm()">Add Expense</button>
-    </div> -->
+    <div class="col-1">
+      <button type="button" name="add-budget"
+      id="add-budget" class="btn btn-primary add-expense"
+      (click)="openAddBudget()">Add Budget</button>
+    </div>
+    <div class="col-1">
+      <button type="button" name="add-income"
+      id="add-income" class="btn btn-primary add-expense"
+      (click)="openAddIncome()">Add Income</button>
+    </div>
     <div class="table-responsive">
       <table class="table table-hover table-striped">
         <thead>
