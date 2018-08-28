@@ -17,7 +17,7 @@
 	/* display: none; */
   margin: 0 auto 20px auto;
   width: 700px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .expenses-container{
@@ -53,4 +53,11 @@ table, th, td{
 
 h2, h3{
 	text-align:left;
+}
+
+.expense-modal{
+  position: fixed;
+  z-index: 2;
+  width: 50%;
+  right: 25%;
 }

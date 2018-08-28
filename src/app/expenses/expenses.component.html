@@ -1,8 +1,7 @@
 <div class="container-fluid expenses-container">
   <app-expense-form
-  (expenseAdded)="addExpense($event)"
   (visibleForm)="modifyVisibility()"
-  *ngIf="formVisible"></app-expense-form>
+  *ngIf="formVisible" class="expense-modal"></app-expense-form>
 
   <div class="row expense">
     <div class="col-10 heading">
