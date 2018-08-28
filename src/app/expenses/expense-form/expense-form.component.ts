@@ -9,24 +9,25 @@ import { ExpenseService} from '../../services/expense.service';
 })
 export class ExpenseFormComponent implements OnInit {
   @Output() visibleForm = new EventEmitter<boolean>();
-  formVisible: boolean = true;
-	constructor(private _expenseService: ExpenseService){}
+  formVisible = true;
+  constructor(private _expenseService: ExpenseService) {}
 
-	addExpense($event): void{
-		let expense = new Expense($event.srcElement.form[0].value, $event.srcElement.form[1].value, $event.srcElement.form[2].value, $event.srcElement.form[3].value);
+  addExpense($event): void {
+    const elem = $event.srcElement;
+    const expense = new Expense(elem.form[0].value, elem.form[1].value, elem.form[2].value, elem.form[3].value);
     this._expenseService.addExpense(expense);
-    for(let i = 0; i < 4; i++){
-      $event.srcElement.form[i].value = "";
+    for (let i = 0; i < 4; i++) {
+      $event.srcElement.form[i].value = '';
     }
-	}
+  }
 
-  closeForm(): void{
+  closeForm(): void {
     this.formVisible = false;
     this.visibleForm.emit(this.formVisible);
   }
 
-	ngOnInit() {
-	}
+  ngOnInit() {
+  }
 
 
 }
