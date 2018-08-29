@@ -1,18 +1,36 @@
 <div class="container-fluid expenses-container">
+
+  <mat-card>
+    <mat-card-title>Expense Overview</mat-card-title>
+    <mat-card-content>
+      <mat-form-field>
+        <span>Month: </span>
+        <mat-select>
+          <!-- <mat-option *ngFor="let month in months">
+            {{month}}
+          </mat-option> -->
+          <mat-option>August</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
   <app-expense-form
   (visibleForm)="modifyVisibility()"
   *ngIf="formVisible" class="expense-modal"></app-expense-form>
 
-  <div class="row expense">
-    <div class="col-10 heading">
-      <h2 class="title">Expenses</h2>
+  <mat-card class="row expense d-flex flex-row">
+    <div class="heading col-10">
+      <mat-card-title>
+        <h2 class="title">Expenses</h2>
+      </mat-card-title>
     </div>
-    <div class="col-2">
+    <mat-card-actions class="col-2">
       <button type="button" name="add-expense"
       id="add-expense" class="btn btn-primary add-expense"
       (click)="showForm()">Add Expense</button>
-    </div>
-    <div class="table-responsive">
+    </mat-card-actions>
+    <mat-card-content class="table-responsive">
       <table class="table table-hover table-striped">
         <thead>
           <tr>
@@ -31,7 +49,7 @@
         	</tr>
         </tbody>
       </table>
-    </div>
+    </mat-card-content>
 
-  </div>
+  </mat-card>
 </div>
