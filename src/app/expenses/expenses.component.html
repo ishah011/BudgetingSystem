@@ -1,33 +1,44 @@
 <div class="container-fluid expenses-container">
 
-  <mat-card>
-    <mat-card-title>Expense Overview</mat-card-title>
-    <mat-card-content>
-      <mat-form-field>
-        <span>Month: </span>
-        <mat-select>
-          <!-- <mat-option *ngFor="let month in months">
-            {{month}}
-          </mat-option> -->
-          <mat-option>August</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card-content>
-  </mat-card>
-
   <app-expense-form
   (visibleForm)="modifyVisibility()"
   *ngIf="formVisible" class="expense-modal"></app-expense-form>
 
+  <mat-card class= "row expense">
+    <div class="d-flex flex-row">
+      <div class="heading col-10">
+        <mat-card-title>Expense Overview</mat-card-title>
+      </div>
+      <mat-card-actions class="col-2">
+        <button type="button" name="view-graph"
+        id="view-graph" class="btn btn-primary button">View Graph</button>
+      </mat-card-actions>
+    </div>
+    <mat-card-content class= "d-flex flex-row justify-content-around">
+      <div>
+        <span class="label">Month: </span>
+        <mat-form-field class="content dropdownContent">
+          <mat-select (change)="getTotal($event.value)">
+            <mat-option *ngFor="let month of months" [value]="month">
+              {{month}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+        <div style="margin: auto 0">
+          <span class="label">Monthly Total: </span>
+          <span class="content">{{this.totalExpense}}</span>
+        </div>
+    </mat-card-content>
+  </mat-card>
+
   <mat-card class="row expense d-flex flex-row">
     <div class="heading col-10">
-      <mat-card-title>
-        <h2 class="title">Expenses</h2>
-      </mat-card-title>
+      <mat-card-title>Expenses</mat-card-title>
     </div>
     <mat-card-actions class="col-2">
       <button type="button" name="add-expense"
-      id="add-expense" class="btn btn-primary add-expense"
+      id="add-expense" class="btn btn-primary button"
       (click)="showForm()">Add Expense</button>
     </mat-card-actions>
     <mat-card-content class="table-responsive">

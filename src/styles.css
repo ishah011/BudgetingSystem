@@ -4,16 +4,13 @@ body{
   background-color: #f5f5f5;
 }
 
-.title{
-  margin: 0px;
-  padding: 0px;
-}
-
 .heading{
-  background-color: inherit;
+  /* background-color: inherit; */
   color:#5D737E;
   margin-bottom: 5px;
   padding: 10px;
+  margin: 0px;
+  text-align: left;
 }
 
 .btn{
@@ -28,4 +25,17 @@ body{
 
 .modal{
   display: initial;
+}
+
+.label{
+  font-size: 17px;
+}
+
+.content{
+  font-size: 16px;
+}
+
+.dropdownContent{
+  padding-left:10px;
+  margin-left:5px;
 }

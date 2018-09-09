@@ -17,10 +17,11 @@
 }
 
 .expense{
-	z-index: 0;
+  z-index: 0;
+  margin-bottom: 25px;
 }
 
-.add-expense{
+.button{
 	margin-bottom: 10px;
 }
 
@@ -36,10 +37,6 @@ th{
 
 table, th, td{
 	border: 1px solid black;
-}
-
-h2, h3{
-	text-align:left;
 }
 
 .expense-modal{
