@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatButtonModule, MatCardModule, MatSelectModule} from '@angular/material';
+import { MatInputModule, MatButtonModule, MatCardModule, MatSelectModule,
+  MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -44,7 +45,9 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatCardModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [ExpenseService,
   BudgetService,

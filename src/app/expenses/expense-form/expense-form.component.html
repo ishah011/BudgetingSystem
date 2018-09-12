@@ -8,30 +8,36 @@
   <mat-card-content>
     <form #expenseForm="ngForm">
       <div class="d-flex flex-column modal-body">
-        <mat-form-field class="form-group row">
-          <input matInput type="text"
-          id="date"
-          placeholder="Date (mm/dd/yyyy)"
-          name="date"/>
-        </mat-form-field>
-        <mat-form-field class="form-group row">
-          <input matInput type="text"
-          id="category"
-          placeholder="Category"
-          name="category">
-        </mat-form-field>
-        <mat-form-field class="form-group row">
-          <input matInput type="text"
-          id="price"
-          placeholder="Price"
-          name="price">
-        </mat-form-field>
-        <mat-form-field class="form-group row">
-          <input matInput type="text"
-          id="location"
-          placeholder="Location"
-          name="location">
-        </mat-form-field>
+        <div class="d-flex flex-row justify-content-between">
+          <mat-form-field class="form-group row">
+            <input matInput [matDatepicker]="picker" type="text"
+            id="date"
+            placeholder="Date (mm/dd/yyyy)"
+            name="date"/>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="form-group row">
+            <input matInput type="text"
+            id="category"
+            placeholder="Category"
+            name="category">
+          </mat-form-field>
+        </div>
+        <div class="d-flex flex-row justify-content-around">
+          <mat-form-field class="form-group row">
+            <input matInput type="text"
+            id="price"
+            placeholder="Price"
+            name="price">
+          </mat-form-field>
+          <mat-form-field class="form-group row">
+            <input matInput type="text"
+            id="location"
+            placeholder="Location"
+            name="location">
+          </mat-form-field>
+        </div>
       </div>
       <mat-card-actions class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="closeForm()">Close</button>
