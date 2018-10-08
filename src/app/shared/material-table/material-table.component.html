@@ -4,28 +4,9 @@
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="Date">
-      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="Category">
-      <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="Price">
-      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="Location">
-      <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.location}} </mat-cell>
+    <ng-container *ngFor="let column of displayedColumns; let i = index" [attr.data-index]="i" matColumnDef={{column}}>
+      <mat-header-cell *matHeaderCellDef> {{column}} </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element[dataSourceColumns[i]]}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

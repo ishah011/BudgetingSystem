@@ -7,10 +7,10 @@ import { MaterialTableService } from '../../services/material-table.service';
   selector: 'app-material-table',
   templateUrl: './material-table.component.html',
   styleUrls: ['./material-table.component.css']
-  // providers: [MaterialTableService]
 })
 export class MaterialTableComponent implements OnInit {
   displayedColumns: string[];
+  dataSourceColumns: string[];
   dataSource: object[];
   matData: MatTableDataSource<object>;
   _dataSubscription: Subscription;
@@ -24,6 +24,7 @@ export class MaterialTableComponent implements OnInit {
     });
     this._columnsSubscription = this._matTableService.currentDisplayedColumns.subscribe((value) => {
       this.displayedColumns = value;
+      this.dataSourceColumns = value.map(elem => elem.toLowerCase());
     });
   }
 
