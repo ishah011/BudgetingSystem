@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule, MatButtonModule, MatCardModule, MatSelectModule,
-  MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+  MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule, MatTableModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CdkTableModule} from '@angular/cdk/table';
 
 
 import { ExpenseService } from './services/expense.service';
@@ -22,6 +23,8 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { MaterialTableComponent } from './shared/material-table/material-table.component';
+import { MaterialTableService } from './services/material-table.service';
 
 
 @NgModule({
@@ -35,11 +38,13 @@ import { HomeComponent } from './home/home.component';
     IncomeAddComponent,
     HeaderComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MaterialTableComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatInputModule,
     MatButtonModule,
@@ -47,11 +52,15 @@ import { HomeComponent } from './home/home.component';
     MatSelectModule,
     BrowserAnimationsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatTableModule,
+    CdkTableModule
   ],
   providers: [ExpenseService,
   BudgetService,
-  NavbarService
+  NavbarService,
+  MaterialTableService
 ],
   bootstrap: [AppComponent]
 })
