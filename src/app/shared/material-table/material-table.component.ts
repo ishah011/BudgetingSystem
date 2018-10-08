@@ -15,7 +15,6 @@ export class MaterialTableComponent implements OnInit {
   matData: MatTableDataSource<object>;
   _dataSubscription: Subscription;
   _columnsSubscription: Subscription;
-  newSource: object[];
 
   constructor(private _matTableService: MaterialTableService) {
     this._dataSubscription = this._matTableService.currentDataSource.subscribe((value) => {

@@ -1,7 +1,7 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Expense } from '../models/expense.model';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { MaterialTableService } from '../services/material-table.service';
+import { MaterialTableService } from './material-table.service';
 
 @Injectable()
 export class ExpenseService {

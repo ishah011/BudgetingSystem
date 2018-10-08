@@ -13,27 +13,9 @@
       id="add-income" class="btn btn-primary add-expense"
       (click)="openAddIncome()">Add Income</button>
     </div>
-    <div class="table-responsive">
-      <table class="table table-hover table-striped">
-        <thead>
-          <tr>
-        		<th scope="col">Name</th>
-        		<th scope="col">Amount</th>
-        		<th scope="col">Recurring</th>
-        		<th scope="col">Frequency</th>
-        	</tr>
-        </thead>
-        <tbody *ngIf="budgets">
-          <!-- TODO: Add a directive to make the row red if the type is expense and green if the type is income -->
-          <tr *ngFor="let budget of budgets">
-            <td scope="row">{{budget.name}}</td>
-        		<td>{{budget.amount}}</td>
-        		<td>{{budget.recurring}}</td>
-        		<td>{{budget.frequency}}</td>
-        	</tr>
-        </tbody>
-      </table>
-    </div>
+    <mat-card-content class="table-responsive">
+      <app-material-table></app-material-table>
+    </mat-card-content>
 
   </div>
 </div>
