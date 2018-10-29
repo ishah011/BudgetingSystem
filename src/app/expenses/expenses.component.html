@@ -1,10 +1,10 @@
-<div class="container-fluid expenses-container">
+<div class="container-fluid card-container">
 
   <app-expense-form
   (visibleForm)="modifyVisibility()"
-  *ngIf="formVisible" class="expense-modal"></app-expense-form>
+  *ngIf="formVisible" class="form-modal"></app-expense-form>
 
-  <mat-card class= "row expense">
+  <mat-card class= "row">
     <div class="d-flex flex-row">
       <div class="heading col-10">
         <mat-card-title>Expense Overview</mat-card-title>
@@ -32,7 +32,7 @@
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="row expense d-flex flex-row">
+  <mat-card class="row d-flex flex-row">
     <div class="heading col-10">
       <mat-card-title>Expenses</mat-card-title>
     </div>

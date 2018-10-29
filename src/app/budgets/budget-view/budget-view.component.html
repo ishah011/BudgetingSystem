@@ -1,21 +1,21 @@
-<div class="container-fluid expenses-container">
-  <div class="row expense">
-    <div class="col-12 heading">
-      <h2 class="title">Budgets</h2>
-    </div>
-    <div class="col-1">
-      <button type="button" name="add-budget"
-      id="add-budget" class="btn btn-primary add-expense"
-      (click)="openAddBudget()">Add Budget</button>
-    </div>
-    <div class="col-1">
-      <button type="button" name="add-income"
-      id="add-income" class="btn btn-primary add-expense"
-      (click)="openAddIncome()">Add Income</button>
+<div class="container-fluid card-container">
+
+  <mat-card class="row">
+    <div class="d-flex flex-row">
+      <div class="heading col-9">
+        <mat-card-title>Budgets</mat-card-title>
+      </div>
+      <mat-card-actions class="col-3">
+        <button type="button" name="add-budget"
+        id="add-budget" class="btn btn-primary add-expense"
+        (click)="openAddBudget()">Add Budget</button>
+        <button type="button" name="add-income"
+        id="add-income" class="btn btn-primary add-expense"
+        (click)="openAddIncome()">Add Income</button>
+      </mat-card-actions>
     </div>
     <mat-card-content class="table-responsive">
       <app-material-table></app-material-table>
     </mat-card-content>
-
-  </div>
+  </mat-card>
 </div>

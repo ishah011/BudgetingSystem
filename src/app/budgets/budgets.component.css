@@ -1,0 +1,47 @@
+.row{
+	background-color: #FFFFFF;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.expense-form{
+	/* display: none; */
+  margin: 0 auto 20px auto;
+  width: 700px;
+  z-index: 1;
+}
+
+.expenses-container{
+	width:75%;
+}
+
+.expense{
+  z-index: 0;
+  margin-bottom: 25px;
+}
+
+.button{
+	margin-bottom: 10px;
+}
+
+table{
+	width:75%;
+	margin:auto;
+}
+
+th{
+	font-weight: bold;
+	background-color: #C0FDFB;
+}
+
+table, th, td{
+	border: 1px solid black;
+}
+
+.expense-modal{
+  position: fixed;
+  z-index: 2;
+  width: 50%;
+  right: 25%;
+}

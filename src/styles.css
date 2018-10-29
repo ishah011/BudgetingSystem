@@ -5,7 +5,6 @@ body{
 }
 
 .heading{
-  /* background-color: inherit; */
   color:#5D737E;
   margin-bottom: 5px;
   padding: 10px;
@@ -38,4 +37,21 @@ body{
 .dropdownContent{
   padding-left:10px;
   margin-left:5px;
+}
+
+mat-card{
+  margin-top: 10px;
+  z-index: 0;
+  margin-bottom: 25px;
+}
+
+.form-modal{
+  position: fixed;
+  z-index: 2;
+  width: 50%;
+  right: 25%;
+}
+
+.card-container{
+	width:75%;
 }

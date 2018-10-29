@@ -1,135 +1,65 @@
-<!-- TODO: Make this specific to income addition
-NEEDED: Income name, amount, type (paycheck and other for now), date acquired (if not paycheck)
-QUESTION: Should we make the option to have it recurring? This would be good for paycheck.
-    Unless, if user selects paycheck, automatically make it recurring and ask how often it should be
- -->
-
-<!--TODO: Modal should show up on click of Add a Budget button on budget page-->
-<div class="modal" id="income-add-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="incomeAddLabel">Add An Income</h5>
-        <button type="button" class="close" aria-label="Close">
-          <span aria-hidden="true" (click)="closeAddIncome()">&times;</span>
-        </button>
-      </div>
-      <form #budgetForm="ngForm">
-        <div class="modal-body">
-          <div class="form-group row">
-            <label for="name" class="col-sm-3 col-form-label">Name:</label>
-            <div class="col-sm-7">
-              <input type="text"
-              class="form-control"
-              id="name"
-              placeholder="Name"
-              name="name">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="amount" class="col-sm-3 col-form-label">Amount:</label>
-            <div class="col-sm-7">
-              <input type="text"
-              class="form-control"
+<mat-card class="budget-modal">
+  <mat-card-title>
+    <h5 class="modal-title" id="incomeAddLabel">Add An Income</h5>
+    <button type="button" class="close">
+      <span (click)="closeAddIncome()">&times;</span>
+    </button>
+  </mat-card-title>
+  <mat-card-content>
+    <form #budgetForm="ngForm">
+      <div class="d-flex flex-column modal-body">
+        <div class="d-flex flex-row justify-content-around">
+          <mat-form-field class="form-group row">
+            <input matInput type="text"
+            id="name"
+            placeholder="Name"
+            name="name">
+          </mat-form-field>
+          <mat-form-field class="form-group row">
+              <input matInput type="text"
               id="amount"
               placeholder="Amount"
               name="amount">
-            </div>
-          </div>
-          <!--TODO: Fix styling of the dropdowns and their labels-->
-          <div class="form-group row">
-            <label for="reccurring" class="col-sm-3 col-form-label">Reccurring:</label>
-            <select class="col-sm-2 dropdown" name="reccurring" id="reccurring" (change)="onReccurringChange($event)">
-              <option
-              class="form-control radio"
-              value="No">No</option>
-              <option
-              class="form-control radio"
-              value="Yes">Yes</option>
-            </select>
-            <label for="frequency" *ngIf="isReccurring" class="col-sm-3 col-form-label">Frequency:</label>
-            <select *ngIf="isReccurring" class="col-sm-2 dropdown" name="frequency" id="frequency">
-              <option
-              class="form-control radio"
-              value="Monthly">Monthly</option>
-              <option
-              class="form-control radio"
-              value="Bi-weekly">Bi-Weekly</option>
-              <option
-              class="form-control radio"
-              value="Weekly">Weekly</option>
-              <option
-              class="form-control radio"
-              value="Daily">Daily</option>
-            </select>
-          </div>
-                <!-- <button  type="submit" class="btn btn-primary btn-success">Add</button> -->
+          </mat-form-field>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="closeAddIncome()">Close</button>
-          <button type="button" class="btn btn-primary" (click)="addIncome($event)">Save changes</button>
+        <div class="d-flex flex-row justify-content-around">
+          <mat-form-field class="form-group row">
+            <mat-select
+              name="recurring"
+              id="recurring"
+              (change)="onRecurringChange()"
+              placeholder="Recurring"
+              [(ngModel)] = "recurring"
+            >
+              <mat-option
+              value="No">No</mat-option>
+              <mat-option
+              value="Yes">Yes</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="form-group row" *ngIf="isRecurring">
+            <mat-select
+              name="frequency"
+              id="frequency"
+              placeholder="Frequency"
+              [(ngModel)] = "frequency"
+            >
+              <mat-option
+              value="Monthly">Monthly</mat-option>
+              <mat-option
+              value="Bi-weekly">Bi-Weekly</mat-option>
+              <mat-option
+              value="Weekly">Weekly</mat-option>
+              <mat-option
+              value="Daily">Daily</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
-      </form>
-    </div>
-  </div>
-</div>
-
- <!-- <div class="container">
-   <div class="right-container">
-   </div>
-   <div class="heading row">
-     <h2 class="title col-sm-10">Add Income</h2>
-     <div class="col-sm-1">
-     </div>
-     <button type="button" name="close" class="btn btn-fail close-modal col-sm-1">X</button>
-   </div>
-     <form #incomeForm="ngForm">
- 		<div class="form-group row">
-       <label for="name" class="col-sm-3 col-form-label">Name:</label>
-       <div class="col-sm-7">
-         <input type="text"
-         class="form-control"
-         id="name"
-         placeholder="Name"
-         name="name">
-       </div>
- 		</div>
- 		<div class="form-group row">
-       <label for="amount" class="col-sm-3 col-form-label">Amount:</label>
-       <div class="col-sm-7">
-         <input type="text"
-   			class="form-control"
-         id="amount"
-   			placeholder="Amount"
-   			name="amount">
-       </div>
- 		</div>
- 		<div class="form-group row">
-       <label for="reccurring" class="col-sm-3 col-form-label">Reccurring:</label>
-       <select class="col-sm-2 dropdown" name="reccurring" id="reccurring" (change)="onReccurringChange($event)">
-         <option
-         class="form-control radio"
-         value="No">No</option>
-         <option
-         class="form-control radio"
-         value="Yes">Yes</option>
-       </select>
-       <label for="frequency" *ngIf="isReccurring" class="col-sm-3 col-form-label">Frequency:</label>
-       <select *ngIf="isReccurring" class="col-sm-2 dropdown" name="frequency" id="frequency">
-         <option
-         class="form-control radio"
-         value="Monthly">Monthly</option>
-         <option
-         class="form-control radio"
-         value="Bi-weekly">Bi-Weekly</option>
-         <option
-         class="form-control radio"
-         value="Weekly">Weekly</option>
-         <option
-         class="form-control radio"
-         value="Daily">Daily</option>
-       </select>
- 		</div>
- 		<button (click)="addIncome($event)" type="submit" class="btn btn-primary btn-success">Add</button>
- 	</form>
- </div> -->
+      </div>
+      <mat-card-actions class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeAddIncome()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addIncome($event)">Save changes</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

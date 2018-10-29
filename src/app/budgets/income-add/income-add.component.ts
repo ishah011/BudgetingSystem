@@ -8,27 +8,29 @@ import { Budget } from '../../models/budget.model';
   styleUrls: ['./income-add.component.css']
 })
 export class IncomeAddComponent implements OnInit {
-  isReccurring: boolean = false;
+  isRecurring = false;
+  frequency: string;
+  recurring: string;
   constructor(private _budgetService: BudgetService) { }
 
   ngOnInit() {
   }
 
-  addIncome($event): void{
-    let income = new Budget("Income", $event.srcElement.form[0].value, $event.srcElement.form[1].value, $event.srcElement.form[2].value, $event.srcElement.form[3].value);
+  addIncome($event): void {
+    const income = new Budget('Income', $event.srcElement.form[0].value,
+    $event.srcElement.form[1].value, this.recurring, this.frequency);
     this._budgetService.addBudget(income);
   }
 
-  onReccurringChange(event){
-    if(event.target.value === "Yes"){
-      this.isReccurring = true;
-    }
-    else{
-      this.isReccurring = false;
+  onRecurringChange(event) {
+    if (this.recurring === 'Yes') {
+      this.isRecurring = true;
+    } else {
+      this.isRecurring = false;
     }
   }
 
-  closeAddIncome(): void{
+  closeAddIncome(): void {
     this._budgetService.addIncomeClose();
   }
 }
