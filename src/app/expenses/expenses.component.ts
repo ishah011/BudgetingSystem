@@ -1,13 +1,14 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ExpenseService} from '../services/expense.service';
+import { MaterialTableService } from '../services/material-table.service';
 import { Expense} from '../models/expense.model';
 
 @Component({
   selector: 'app-expenses',
   templateUrl: './expenses.component.html',
   styleUrls: ['./expenses.component.css'],
-  providers: [ExpenseService]
+  providers: [ExpenseService, MaterialTableService]
 })
 export class ExpensesComponent implements OnInit {
   @Input() addedExpense: Expense;

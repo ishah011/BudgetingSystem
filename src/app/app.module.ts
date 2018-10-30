@@ -10,7 +10,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import { ExpenseService } from './services/expense.service';
 import { BudgetService } from './services/budget.service';
 import { NavbarService } from './services/navbar.service';
-
+import { MaterialTableService } from './services/material-table.service';
 
 import { AppComponent } from './app.component';
 import { ExpensesComponent } from './expenses/expenses.component';
@@ -24,7 +24,6 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { MaterialTableComponent } from './shared/material-table/material-table.component';
-import { MaterialTableService } from './services/material-table.service';
 
 
 @NgModule({
@@ -57,10 +56,8 @@ import { MaterialTableService } from './services/material-table.service';
     MatTableModule,
     CdkTableModule
   ],
-  providers: [ExpenseService,
-  BudgetService,
-  NavbarService,
-  MaterialTableService
+  providers: [
+    NavbarService
 ],
   bootstrap: [AppComponent]
 })
