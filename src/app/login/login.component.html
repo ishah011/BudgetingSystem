@@ -1,25 +1,26 @@
-<div class="">
-  <form #loginForm="ngForm">
-    <div class="form-group row">
-      <label for="username" class="col-sm-3 col-form-label">Username:</label>
-      <div class="col-sm-7">
-        <input type="text"
-        class="form-control"
-        id="username"
-        placeholder="Username"
-        name="username">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="password" class="col-sm-3 col-form-label">Password:</label>
-      <div class="col-sm-7">
-        <input type="password"
-        class="form-control"
-        id="password"
-        placeholder="Password"
-        name="password">
-      </div>
-    </div>
-    <button (click)="Login($event)" type="submit" class="btn btn-primary btn-success">Login</button>
-  </form>
+<div class="container-fluid card-container">
+  <mat-card>
+    <mat-card-title>
+      Login
+    </mat-card-title>
+    <mat-card-content>
+      <form #loginForm="ngForm" class="d-flex flex-column login-form">
+        <mat-form-field class="form-group row">
+          <input matInput type="text"
+          id="username"
+          placeholder="Username"
+          name="username">
+        </mat-form-field>
+        <mat-form-field class="form-group row">
+          <input matInput type="password"
+          id="password"
+          placeholder="Password"
+          name="password">
+        </mat-form-field>
+        <mat-card-actions>
+          <button (click)="Login($event)" type="submit" class="btn btn-primary btn-success">Login</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
