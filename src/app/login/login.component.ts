@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
     this.users.forEach((user) => {
       if (user.username === this.formUsername && user.password === this.formPassword) {
         this.isLoggedIn = true;
-        console.log('isLoggedIn value is: ' + this.isLoggedIn);
         return;
       }
     });

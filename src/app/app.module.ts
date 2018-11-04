@@ -7,10 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
 
 
-import { ExpenseService } from './services/expense.service';
-import { BudgetService } from './services/budget.service';
 import { NavbarService } from './services/navbar.service';
-import { MaterialTableService } from './services/material-table.service';
 
 import { AppComponent } from './app.component';
 import { ExpensesComponent } from './expenses/expenses.component';
@@ -38,7 +35,7 @@ import { MaterialTableComponent } from './shared/material-table/material-table.c
     HeaderComponent,
     LoginComponent,
     HomeComponent,
-    MaterialTableComponent,
+    MaterialTableComponent
   ],
   imports: [
     BrowserModule,
