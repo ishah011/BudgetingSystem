@@ -8,11 +8,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class AppComponent {
   title = 'Budgeting System';
 
-  constructor(){
-  }
-
-  ngOnInit(){}
-
-  ngOnDestroy(){
+  constructor() {
   }
 }

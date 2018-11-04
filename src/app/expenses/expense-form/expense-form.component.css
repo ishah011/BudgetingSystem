@@ -34,3 +34,7 @@ h2{
   padding-right: 5px;
   padding-top: 5px;
 }
+
+.expense-modal{
+  display: fixed;
+}

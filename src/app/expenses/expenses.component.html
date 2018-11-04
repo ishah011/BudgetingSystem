@@ -1,38 +1,49 @@
-<div class="container-fluid expenses-container">
+<div class="container-fluid card-container">
+
   <app-expense-form
-  (expenseAdded)="addExpense($event)"
   (visibleForm)="modifyVisibility()"
-  *ngIf="formVisible"></app-expense-form>
+  *ngIf="formVisible" class="form-modal"></app-expense-form>
 
-  <div class="row expense">
-    <div class="col-10 heading">
-      <h2 class="title">Expenses</h2>
+  <mat-card class= "row">
+    <div class="d-flex flex-row">
+      <div class="heading col-10">
+        <mat-card-title>Expense Overview</mat-card-title>
+      </div>
+      <mat-card-actions class="col-2">
+        <button type="button" name="view-graph"
+        id="view-graph" class="btn btn-primary button">View Graph</button>
+      </mat-card-actions>
     </div>
-    <div class="col-2">
+    <mat-card-content class= "d-flex flex-row justify-content-around">
+      <div>
+        <span class="label">Month: </span>
+        <mat-form-field class="content dropdownContent">
+          <mat-select (change)="getTotal($event.value)">
+            <mat-option *ngFor="let month of months" [value]="month">
+              {{month}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+        <div style="margin: auto 0">
+          <span class="label">Monthly Total: </span>
+          <span class="content">{{this.totalExpense}}</span>
+        </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="row d-flex flex-row">
+    <div class="heading col-10">
+      <mat-card-title>Expenses</mat-card-title>
+    </div>
+    <mat-card-actions class="col-2">
       <button type="button" name="add-expense"
-      id="add-expense" class="btn btn-primary add-expense"
+      id="add-expense" class="btn btn-primary button"
       (click)="showForm()">Add Expense</button>
-    </div>
-    <div class="table-responsive">
-      <table class="table table-hover table-striped">
-        <thead>
-          <tr>
-        		<th scope="col">Date</th>
-        		<th scope="col">Category</th>
-        		<th scope="col">Price</th>
-        		<th scope="col">Location</th>
-        	</tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let expense of expenses">
-        		<td scope="row">{{expense.date}}</td>
-        		<td>{{expense.category}}</td>
-        		<td>{{expense.price}}</td>
-        		<td>{{expense.location}}</td>
-        	</tr>
-        </tbody>
-      </table>
-    </div>
+    </mat-card-actions>
+    <mat-card-content class="table-responsive">
+      <app-material-table></app-material-table>
+    </mat-card-content>
 
-  </div>
+  </mat-card>
 </div>

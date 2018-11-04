@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   //   return this._api.getHome();
   // }
 
-
-
   ngOnInit() {
   }
 
